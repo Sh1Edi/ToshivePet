@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Confirmado</title>
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <!-- Css -->
+    <link type="text/css" rel="stylesheet" href="{% static 'core/css/general.css' %}" />
+
+    <!-- Jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body class="scrollbar">
+    <!--Barra de navegacion-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'mostrarmenuuser' %}"><img class="imgt" src="{% static 'core/img/LOGO/toshivelogo2.png' %}" alt="sin imagen"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        {% if user.is_authenticated %} 
+                        {{user.username}}
+                        {% else %}
+                        Cuenta
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'PerfilUser' %}">Perfil</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'carrito' %}">Carrito</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'seguimiento' %}">Seguimiento</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Buscar">
+              <button class="btn btn-primary" type="button">Buscar</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <marquee width="100%" direction="left" height="30px" style="background-color: #99cc00; color: #fffdfd">
+        Suscribete a nuestra fundación sin fines de lucro, donando directamente a esta y recibe un 5% de descuento en el total de tu compra.
+    </marquee>
+    <div class="container" style="margin-top: 20px;">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <h3 class="mb-2 text-primary">¡Pedido confirmado satisfactoriamente!</h3>
+                            
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <img class="imgs" src="{% static 'core/img/seg/pedido confirmado editado.jpg' %}" alt="Sin Imagen">
+                            <div class="text-product">
+                                <h2>Tu pedido está confirmado </h2>
+                                <p1>Se ha aceptado tu producto y estamos preparándolo. Ve al apartado seguimiento para recibir actualizaciones sobre el estado de tu envío.</p1>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="text-product">
+                                <a href="{% url 'MainMenu' %}"><button style="margin-top: 15px;" type="button" id="submit" name="submit" class="btn btn-primary">Aceptar</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p> Copyright © Toshive Pet 2023 </p>
+    </footer>
+    <script src="{% static 'core/js/seguimientoJQ.js' %}"></script>  
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+</html>

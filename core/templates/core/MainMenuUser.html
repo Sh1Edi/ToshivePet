@@ -1,0 +1,35 @@
+{% extends 'core/PlantillaMainMenuUser.html' %}
+{% load static %}
+{% block titulo %}
+<title>ToshivePet</title>
+{% endblock titulo %}
+       
+{% block fotosmascotas %}
+<div class="container">
+  
+    <div class="row justify-content-center" style="margin-top: 0%;">                  <!--Primera Fila-->
+        <div class="col-md-12">
+            <!-- En esta fila, contendra la pagina de navegacion (menu contactos) y la bienvenida -->
+            <header><h1 style="margin-bottom: 5%;">
+                Bienvenidos
+            </h1></header>
+        </div>
+    </div>                                                                  
+    <div class="row"><!--Segunda Fila-->
+        {% for m in listaProductos %}
+        {% if m.stock > 0  %}
+        <div class="col-md-3">
+            <a href="{% url 'botonMostrar' m.idProducto %}"><img class="img" src="{{ m.foto.url }}" alt="Sin imagen"></a>
+            <p>{{ m.nombreProducto }}</p>
+        </div>
+        {% else %}
+        <div class="col-md-3">
+            <a href="#"><img class="img" src="{{ m.foto.url }}" alt="Sin imagen" style="filter: grayscale(100%);"></a>
+            <p>{{ m.nombreProducto }}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+        
+    </div><!--Fin Segunda Fila-->
+</div>
+{% endblock fotosmascotas %}

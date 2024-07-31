@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Producto</title>
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!-- CSS personalizado -->
+    <link type="text/css" rel="stylesheet" href="{% static 'core/css/general.css' %}">
+</head>
+
+<body class="scrollbar">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'listarUsuarios' %}">
+        <img class="imgt" src="{% static 'core/img/LOGO/toshivelogo2.png' %}" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">{{user.username}}</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'listarUsuarios' %}">Listar Usuarios</a></li>
+                  <li><a class="dropdown-item" href="{% url 'ingresarproductos' %}">Ingresar Producto</a></li>
+                  <li><a class="dropdown-item" href="{% url 'mostrareliminarproducto' %}">Gestión de Productos</a></li>
+                  <li><a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+        <form class="d-flex" action="{% url 'mostrareliminarproducto' %}" method="get">
+          <input class="form-control me-2" type="text" placeholder="Buscar" name="NombreProducto">
+          <button class="btn btn-primary" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <header>
+          <h1 class="mb-5" style="color:#3498DB;">Gestión de Productos</h1>
+        </header>
+      </div>
+    </div>
+     
+    <div class="row">
+      <div class="col-md-12">
+        {% if messages %}
+        <ul class="list-unstyled text-center">
+          {% for message in messages %}
+          <li class="alert alert-{{ message.tags }}"{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} role="alert"{% endif %}>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Importante: {% endif %}
+            {{ message }}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <table class="table table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for m in listaProductos %}
+            <tr>
+              <td>{{ m.idProducto }}</td>
+              <td style="width: 20%;"><img class="img-thumbnail" src="{{ m.foto.url }}" alt="Sin imagen"></td>
+              <td>{{ m.nombreProducto }}</td>
+              <td>
+                <a href="{% url 'botonModificar' m.idProducto %}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
+                <a href="{% url 'botoneliminar' m.idProducto %}" class="btn btn-danger btn-sm btnEliminacion"><i class="fa-solid fa-trash"></i> Eliminar</a>
+              </td>
+            </tr>
+            {% endfor %}  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="text-center mt-5 py-3 bg-dark text-white">
+    <p>Copyright © Toshive Pet 2023</p>
+  </footer>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="{% static 'core/js/SWeliminarproducto.js' %}"></script>
+  <!-- JS Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script> 
+</body>
+</html>

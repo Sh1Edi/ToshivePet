@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingresar Producto</title>
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Css 
+  <link type="text/css" rel="stylesheet" href="{% static 'core/css/general.css' %}" />-->
+  <link type="text/css" rel="stylesheet" href="{% static 'core/css/formProductos.css' %}" />
+
+</head>
+<body class="scrollbar">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'listarUsuarios' %}"><img class="imgt" src="{% static 'core/img/LOGO/toshivelogo2.png' %}" alt="sin imagen"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Perfil Administrativo</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'listarUsuarios' %}">Listar Usuarios</a></li>
+                    <li><a class="dropdown-item" href="{% url 'ingresarproductos' %}">Ingresar Producto</a></li>
+                    <li><a class="dropdown-item" href="{% url 'mostrareliminarproducto' %}">Gestion de Productos</a></li>
+                    <li><a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+          
+        
+  <div class="container">                                                                                             <!-- INICIO DEL CONTAINER --> 
+    <!-- INICIO DEL PRIMER ROW -->
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-12">
+          <h2 style="color:#3498DB;">Ingresar Productos</h2> 
+      </div>
+    </div>
+
+    <div class="row" style="margin: 10px;">
+
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="text-align: center;">
+          <form action="{% url 'insertarProductost' %}" method="post" enctype="multipart/form-data" class="formingpro" id="formingpro" name="formingpro">
+            {% csrf_token %}
+
+            <!-- Grupo: ID -->
+            <div class="formulario__grupo" id="grupo__id">
+              <label for="id" class="formulario__label">ID producto</label>
+              <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="id" id="id" placeholder="Ingresar ID">
+                  <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                  <p class="formulario__input-error">El ID solo debe contener numeros y deben ser mayor a 0.</p>
+              </div>
+            </div>
+
+            <!-- Grupo: Tipo de producto -->
+            <div class="formulario__grupo" id="grupo__tipo">
+              <label for="tipo" class="formulario__label">Tipo de Producto: </label><br>
+              <select class="controls" name="tipo" id="tipo">
+                {% for r in listaTipos %}
+                <option value="{{ r.idTipo }}">{{ r.descripcion }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            
+            <!-- Grupo: Nombre -->
+            <div class="formulario__grupo" id="grupo__nombre">
+              <label for="nombre" class="formulario__label">Nombre de producto</label>
+              <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ingresar nombre del producto">
+                  <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                  <p class="formulario__input-error">El nombre debe contener mas de 5 caracteres.</p>
+              </div>
+            </div>
+
+            <!-- Grupo: Stock -->
+            <div class="formulario__grupo" id="grupo__stock">
+              <label for="stock" class="formulario__label">Stock</label>
+              <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="stock" id="stock" placeholder="Ingresar stock">
+                  <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                  <p class="formulario__input-error">El Stock solo debe contener numeros y deben ser mayor a 0.</p>
+              </div>
+            </div>
+
+            <!-- Grupo: Foto -->
+            <label style="margin: 10px;" class="formulario__label" for="fotop">Fotografia: </label>
+            <input class="controls" name="fotop" type="file" id="fotop" name="fotop" required>
+            <br>
+
+            <!-- Grupo: Descripcion -->
+            <div class="formulario__grupo" id="grupo__descripcion">
+              <label for="descripcion" class="formulario__label">Descripcion</label>
+              <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="descripcion" id="descripcion" placeholder="Ingresar descripcion">
+                  <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                  <p class="formulario__input-error">La descripcion debe contener mas de 5 caracteres.</p>
+              </div>
+            </div>
+
+            <!-- Grupo: Precio -->
+            <div class="formulario__grupo" id="grupo__preciop">
+              <label for="preciop" class="formulario__label">Precio</label>
+              <div class="formulario__grupo-input">
+                  <input type="text" class="formulario__input" name="preciop" id="preciop" placeholder="Ingresar precio">
+                  <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                  <p class="formulario__input-error">El Precio debe ser mayor a 0.</p>
+              </div>
+            </div>
+
+            <br>
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <i class="fa-solid fa-triangle-exclamation"> Error: Por favor rellenar el formulario correctamente.</i>
+            </div>
+            <br>                                
+            
+            <div class="formulario__grupo formulario__grupo_btn-enviar">
+                <button type="submit" class="formulario__btn">Guardar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            </div>
+            
+          </form>
+      </div>
+      <div class="col-md-3"></div>
+
+    </div>  
+    <!-- FIN DEL SEGUNDO ROW -->      
+  
+  </div>                                                                                                          <!-- FIN DEL CONTAINER --> 
+
+  <footer class="text-center mt-5 py-3 bg-dark text-white">
+    <p>Copyright © Toshive Pet 2023</p>
+  </footer>
+  
+  
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- JS -->
+  <script src="{% static 'core/js/formProducto.js' %}"></script>
+
+  {% if messages %}
+      {% for message in messages %}
+        <script>
+          swal.fire({
+            icon: "{{ message.tags }}",
+            title: "{{ message }}",
+            timer: 5000,
+            showConfirmButton: false,
+          })
+          </script>
+      {% endfor %}
+  {% endif %}
+
+
+  
+  <!-- JS Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script> 
+</body>
+</html>

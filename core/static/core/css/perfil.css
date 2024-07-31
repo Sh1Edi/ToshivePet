@@ -1,0 +1,231 @@
+
+
+
+body {
+    font-family: 'Mulish', sans-serif;
+    margin: 0;
+    padding-top: 0px;
+    color: #2e323c;
+    background: #E5B7D2;
+    background: #62beab;
+    position: relative;
+    height: 100%;
+}
+
+.controls{
+    width: 100%;
+    background-color: #d2e2d7;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+
+.imgt{
+    width: 100%;
+    max-width: 70px;
+
+}
+
+.formulario__label {
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.formulario__grupo-input {
+    position: relative;
+}
+
+.formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3 ease all;
+}
+
+/*el ultimo valor de rgba es la transparencia*/
+.formulario__input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);    
+}
+
+.formulario__input-error {
+    font-size: 12px;
+    margin-top: 0;
+    display: none;
+
+}
+
+.formulario__input-error-activo {
+    display: block;
+
+}
+
+.formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0; 
+
+}
+
+.formulario__mensaje {
+    height: 50px;
+    line-height: 45px;
+    background-color: #F66060;
+    padding: 5px 40px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+
+.formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+    /*el display none es porque quiero que se oculte hasta que se active esa funcion*/
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+/* -- Estilos para validacion  -- */
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+    top: 13px;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+
+/* MediaQueries */
+
+@media screen and (max-width: 800px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario__btn {
+        width: 100%;
+    }
+}
+
+/*
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+    background: #E5B7D2;
+    border-radius: 5px;
+}
+
+*/
+
+.warnings{
+    color: red;
+}

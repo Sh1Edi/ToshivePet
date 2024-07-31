@@ -1,0 +1,47 @@
+body{
+    background-color: #f2f5f3;
+}
+
+.container{
+    margin-top: 2%;
+}
+
+.imgt{
+    width: 100%;
+    max-width: 70px;
+
+}
+
+table{
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+thead tr{
+    background-color: rgb(30, 102, 145);
+    color:white;
+}
+
+table tr{
+    border: 1px solid;
+}
+
+@media screen and (max-width: 650px){
+    table{
+        border: 0px;
+    }
+    thead{
+        display: none;
+    }
+    table tr{
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ddd;
+        display: block;
+        text-align: center;
+    }
+    table td{
+        display: block;
+        border-bottom: 1px solid #ddd;
+    }
+}

@@ -1,0 +1,31 @@
+Insert into TOSHIVEPET.CORE_TIPO (DESCRIPCION) values ('Juguete');
+Insert into TOSHIVEPET.CORE_TIPO (DESCRIPCION) values ('Comida');
+Insert into TOSHIVEPET.CORE_TIPO (DESCRIPCION) values ('Accesorio');
+
+
+Insert into TOSHIVEPET.CORE_ROL (NOMBREROL) values ('Administrador');
+Insert into TOSHIVEPET.CORE_ROL (NOMBREROL) values ('Cliente');
+
+
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Bebedero Paseo 500ml','Botella con bebedero incluido el cuál permitirá que su mascota pueda beber agua de forma cómoda','10','5490','toshibedjango/bebedero_paseo.jpg','1');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Dispensador Bolsa Fecal Earth Rated Sin Olor','Earth Rated Dispensador + Rollo De Recarga 15 Bolsas 13X9 Sin Olor. Trae un gancho en la parte posterior el cual se puede                  aderir a la parte que mas le acomode, logrando así tener las manos totalmente desocupadas','8','3990','toshibedjango/bolsa_fecal.jpg','1');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Filtro Catit Fuente Filtro Dual Action','Filtro para bebedero, retiene sedimentos y desperdicios. El carbón activo ayuda a reducir olores y absorbe las impurezas presentes en el agua del grifo','10','6500','toshibedjango/catit_filtro.jpg','1');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Brit Care Dog Champion Salmon and Herring 12KG','Fórmula hipoalergénica para mantener a los perros de exhibición en excelente condición.                     Todos los perros pasan por períodos en los que, debido a los cambios en la rutina o condición, la nutrición regular no es su?ciente','7','62990','toshibedjango/dog_show_champion.jpg','3');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Pedigree Alimento Seco Perro Adulto Carne Pollo y Cereal 3kg','Pedigree® Adulto Etapa 2 sabor carne y vegetales es alimento seco 100% completo y balanceado, elaborado con fibras naturales y proteínas de calidad para acompañar a tu perro en su etapa adulta','15','12290','toshibedjango/pedigree-adulto.png','3');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Whiskas Adulto Sabor Carne 3KG','El nuevo alimento para gatos Whiskas sabor Carne, es ideal para gatos en etapa adulta. El alimento para gatos Whiskas es nutricionalmente completo y balanceado, con el equilibrio óptimo de vitaminas y minerales para ayudar a brindar el mejor cuidado de tu gato adulto','14','9990','toshibedjango/whiskas.jpg','3');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Bola Con Textura The Cat Band','Las pelotas de The Cat Band son uno de los juguetes favoritos para tu gato porque le proporciona mucha actividad física, juegos y diversión. Cuando las pelotas se mueven y ruedan por el suelo, consigue llamar la atención de tu felino, corre para atrapar la pelota, será todo un reto para él','5','2990','toshibedjango/bola_gato.jpg','2');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Frisbee Afp Outdoor Anti-Bite Flier','Juguete frisbee para perros marca AFP Hecho con TPR anti-mordidas, flexible y amable con los dientes de tu perro. Con un vuelo preciso muy entretenido para tu perro y para ti. Es uno de los mejores frisbee suave, flexible y fabricado con TPR','7','9990','toshibedjango/Frisbee.jpg','2');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Gigwi Melody Chaser Mapache','Divertido juguete de la línea “Melody Chaser” en forma de tubo con diseño de Mapache y con sonido que se activa al movimiento. Además trae plumas y un juguete en su interior para aumentar la diversión. Diseñado para satisfacer el instinto de caza y para mantenerlo en sus patas','3','9990','toshibedjango/gigwi_gato.jpg','2');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Planet Dog Hueso','Planet Dog Hueso es un juguete fabricado con un material no-tóxico y reciclable y con un agradable olor a menta. Para los masticadores amantes del medio ambiente y de olores deliciosos','5','17990','toshibedjango/huesop.jpg','2');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Acana Bountiful Catch Cat 4.5kg','Acana Bountiful Catch Cat es un alimento completo para gatos adultos formulado con una combinación de distintos pescados frescos, combinado con otros ingredientes llenos de proteínas y nutrientes que proporcionan a su gato todo lo que necesita para que esté sano y enérgico','9','62990','toshibedjango/Acana_Cat.jpg','3');
+Insert into TOSHIVEPET.CORE_PRODUCTO (NOMBREPRODUCTO,DESCRIPCIONPRODUCTO,STOCK,PRECIO,FOTO,TIPO_ID) values ('Collar zee.cat','Los collares Zee Cat son modernos y con diseños innovadores, ideales para gatos que tienen la elegancia a flor de piel,                     están hechos de poliéster blando y comodo para tu felino, teniendo una  hebilla separable que se abre automáticamente en caso de atrape','11','4990','toshibedjango/collar_gato.jpg','1');
+
+
+Insert into TOSHIVEPET.CORE_PREGUNTA (PREGUNTA) values ('¿Cúal es el primer nombre de tu madre?');
+Insert into TOSHIVEPET.CORE_PREGUNTA (PREGUNTA) values ('¿Cúal es el primer nombre de tu padre?');
+Insert into TOSHIVEPET.CORE_PREGUNTA (PREGUNTA) values ('¿Cúal es el nombre de tu mascota?');
+Insert into TOSHIVEPET.CORE_PREGUNTA (PREGUNTA) values ('¿Cúal es el primer nombre de tu hermano(a)?');
+
+
+Insert into TOSHIVEPET.CORE_USUARIO (NOMBREUSUARIO,CORREO,TELEFONO,CLAVE,RESPUESTA,IDPREGUNTA_ID,IDROL_ID) values ('Prueba Dos','PruebaDos@gmail.com','123451234','pruebaDos123','Prueba Dos','1','2');
+Insert into TOSHIVEPET.CORE_USUARIO (NOMBREUSUARIO,CORREO,TELEFONO,CLAVE,RESPUESTA,IDPREGUNTA_ID,IDROL_ID) values ('Prueba Uno','PruebaUno@gmail.com','123456789','pruebaUno1234','PruebaUno','1','1');

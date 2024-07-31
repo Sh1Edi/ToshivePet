@@ -1,0 +1,201 @@
+
+
+body {
+    background-color: #f2f5f3;
+    font-family: 'Mulish', sans-serif;
+    position: relative;
+    padding-bottom: 12rem;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-top: 2px;
+}
+
+.img {
+    width: 100%;
+    float:right;
+    border: 2px solid rgb(151, 151, 155);
+    border-radius: 30px;
+}
+
+.img:hover {
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+}
+
+div {
+    text-align: center;
+}
+
+div a {
+    transition: 0.3s ease;
+    color: #5e5c64;
+    text-decoration: none;
+}
+
+div a:hover {
+    color:rgb(32, 75, 104);
+}
+
+.imgt{
+    width: 100%;
+    max-width: 70px;
+
+}
+.imgp{
+    width: 100%;
+    float:right;
+    border: 2px solid rgb(151, 151, 155);
+    border-radius: 30px;
+}
+.imgpp{
+    width: 100%;
+    max-width: 85px;
+    
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+    background: #E5B7D2;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #99cc00;
+    padding: 3rem;
+    color: #fff;
+    position:absolute ;
+    width: 100%;
+    bottom: 0;
+}
+h4 {
+    color: black;
+}
+h5 {
+    color: rgb(224, 188, 120);
+
+}
+
+.text-product{
+    width: 100%;
+    color: #252525;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.text-product h3{
+    width: 100%;
+    color: inherit;
+    font-weight: inherit;
+    font-size: 20px;
+}
+
+.text-product h3:hover{
+    width: 100%;
+    color: #1bbeb4;
+}
+
+.text-product p{
+    width: 100%;
+    color: #666;
+    font-size: 13px;
+}
+.caja{
+    width: 100%;
+    border: 2px solid rgb(151, 151, 155); 
+    border-radius: 25px; 
+    background-color: #fff;
+    
+}
+.caja:hover{
+    width: 100%;
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.3);
+}
+.controls{
+    width: 100%;
+    background-color: #d2e2d7;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px;
+    font-family: 'calibri';
+    font-size: 18px;
+
+}
+.imgs{
+    width: 100%;
+    max-width: 800px;
+
+}
+
+.messages{
+    background-color: #55b95533;
+    border-radius: 40px;
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+.modiImagen{
+    width: 80%;
+    margin-top: 10%;
+    border: 2px solid rgb(151, 151, 155);
+    border-radius: 30px;
+    
+}
+/* html listar usuarios */
+.tabla{
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.thead{
+    border: 2px solid; 
+    background-color:aquamarine;
+}
+
+@media screen and (max-width: 900px){
+    .tabla{
+        border: 0px;
+    }
+    .thead{
+        display: none;
+    }
+    .trtabla{
+        border: 2px solid #ddd;
+    }
+    .tabla tr{
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ddd;
+        display: block;
+    }
+    .tabla td{
+        display: block;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+.errorPag{
+    margin-top: 90px;
+}
+
+.errorBoton{
+    margin-top: 10px;
+    padding:5px;
+    color:black;
+    border-radius: 40px;
+    background-color:#ddd;
+    border-color: rgb(102, 171, 118);
+    border-width: 5px;
+    font-size: 20px;
+}
+
+.errorBoton:hover{
+    border-color: red;
+    transition: .5s;
+    color:blue;
+}
